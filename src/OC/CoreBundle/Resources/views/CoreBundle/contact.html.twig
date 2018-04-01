@@ -1,0 +1,31 @@
+{# src/OC/CoreBundle/Resources/views/Default/index.html.twig #}
+
+{% extends "OCCoreBundle::layout.html.twig" %}
+
+{% block title %}
+  Contacts - {{ parent() }}
+{% endblock %}
+
+{% block ocplatform_body %}
+
+  <h2>Liste des contacts</h2>
+
+  <ul>
+    {% if  listAdverts is defined %}
+      {% for advert in listAdverts %}
+        <li>
+          <a href="{{ path('oc_platform_view', {'id': advert.id}) }}">
+            {{ advert.title }}
+          </a>
+          par {{ advert.author }},
+          le {{ advert.date|date('d/m/Y') }}
+        </li>
+      {% else %}
+        <li>Pas (encore !) d'annonces</li>
+      {% endfor %}
+    {% else %}
+        <li>Pas (encore !) d'annonces</li>
+    {% endif %}
+  </ul>
+
+{% endblock %}

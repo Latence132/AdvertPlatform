@@ -1,0 +1,16 @@
+{# src/OC/PlatformBundle/Resources/views/Advert/purge.html.twig #}
+
+{% extends "OCPlatformBundle::layout.html.twig" %}
+
+{% block title %}
+  Accueil - {{ parent() }}
+{% endblock %}
+
+{% block ocplatform_body %}
+
+  <h2>Annonces purgés</h2>
+  <p>Il y a {{purge.compteur}} annonce(s) de ancienne de {{purge.days}}  jours purgés</p>
+
+
+
+{% endblock %}
